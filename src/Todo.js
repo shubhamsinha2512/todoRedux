@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   StyleSheet,
   Text,
@@ -16,13 +16,16 @@ import AddTodo from './components/AddTodo';
 
 function Todo(props){
 
-  const [todos, setTodos] = useState([
-    {text: 'create native app', key:'1'},
-    {text: 'make changes', key:'2'},
-    {text: 'run & test on device', key:'3'},
-    {text: 'build apk', key:'4'},
-    {text: 'release', key:'5'},
-  ])
+  // const [todos, setTodos] = useState([
+  //   {text: 'create native app', key:'1'},
+  //   {text: 'make changes', key:'2'},
+  //   {text: 'run & test on device', key:'3'},
+  //   {text: 'build apk', key:'4'},
+  //   {text: 'release', key:'5'},
+  // ])
+
+// console.log('Todo', props.todos);
+  useEffect(()=>{}, [props.todos])
 
   return (
     <View style={styles.container}>
@@ -51,6 +54,7 @@ const styles = StyleSheet.create({
   content:{},
   list:{}
 });
+
 
 const mapStateToProps = state => {
   return {
